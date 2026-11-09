@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Story ❤️</title>
+<style>
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #fff0f5;
+  color: #70445a;
+  text-align: center;
+}
+.card {
+  margin: 70px 20px;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 8px 25px #e9b8cc;
+}
+.cartoon { font-size: 85px; }
+h1 { color: #ed79a8; }
+p { font-size: 19px; line-height: 1.8; }
+button {
+  background: #f28bb5;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="cartoon" id="pic">🐻💗</div>
+  <h1 id="title">ဟေး... မင်းအတွက်ပါ ❤️</h1>
+  <p id="message">
+    ဒီစာမျက်နှာလေးကို မင်းအတွက်
+    ကိုယ်တိုင်ဖန်တီးထားတာပါ။
+    အဆုံးထိ ကြည့်ပေးနော် 🥺
+  </p>
+  <button onclick="nextPage()">Next ➜</button>
+  <p id="count">1 / 4</p>
+</div>
+<script>
+const pages = [
+ ["🐻💗","ဟေး... မင်းအတွက်ပါ ❤️",
+  "ဒီစာမျက်နှာလေးကို မင်းအတွက် ကိုယ်တိုင်ဖန်တီးထားတာပါ။ အဆုံးထိ ကြည့်ပေးနော် 🥺"],
+ ["🌷🐰","မင်းကို ပြောချင်တာလေးရှိတယ်",
+  "တစ်ခါတလေ စကားနဲ့ပြောဖို့ ခက်တဲ့အရာလေးတွေကို ဒီလိုရေးပြချင်လို့ပါ။"],
+ ["🧸🌸","အမှတ်တရလေးတွေ",
+  "မင်းနဲ့ပတ်သက်တဲ့ အမှတ်တရလေးတွေကို ကိုယ်တန်ဖိုးထားပါတယ်။"],
+ ["💌❤️","နောက်ဆုံး စကားလေး",
+  "ဒီစာမျက်နှာလေးကို ကြည့်ပေးလို့ ကျေးဇူးပါ။ မင်းရဲ့နေ့ရက်တိုင်း ပျော်ရွှင်ပါစေနော်။ ❤️"]
+];
+let current = 0;
+function nextPage() {
+ current++;
+ if(current >= pages.length) current = 0;
+ document.getElementById("pic").innerText = pages[current][0];
+ document.getElementById("title").innerText = pages[current][1];
+ document.getElementById("message").innerText = pages[current][2];
+ document.getElementById("count").innerText = (current+1)+" / 4";
+}
+</script>
+</body>
+</html>
